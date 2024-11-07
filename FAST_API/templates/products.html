@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Управление продуктами</title>
+</head>
+<body>
+<h1>Управление продуктами</h1>
+
+<h2>Добавить продукт</h2>
+<form action="/products/" method="post">
+    <label for="name">Название продукта:</label>
+    <input type="text" id="name" name="name" required><br>
+    <label for="description">Описание:</label>
+    <input type="text" id="description" name="description" required><br>
+    <label for="price">Цена:</label>
+    <input type="number" id="price" name="price" required><br>
+    <button type="submit">Добавить продукт</button>
+</form>
+
+<h2>Список продуктов</h2>
+<ul>
+    {% for product in products %}
+    <li>{{ product.name }} - {{ product.price }} руб.</li>
+    {% endfor %}
+</ul>
+
+<a href="/">Назад</a>
+</body>
+</html>
